@@ -1,0 +1,24 @@
+{
+  "name": "xx-grid",
+  "version": "0.0.1",
+  "authors": [
+    "Rob Resendez <resendez.java@gmail.com>"
+  ],
+  "description": "20-column Responsive Grid for Polymer",
+  "main": "xx-grid.html",
+  "keywords": [
+    "web-components"
+  ],
+  "license": "BSD",
+  "homepage": "https://github.com/robrez/xx-grid",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^0.5"
+  }
+}

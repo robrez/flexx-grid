@@ -1,0 +1,56 @@
+<!--
+    @license
+    Copyright (c) 2015 Rob Resendez. All rights reserved.
+    This code may only be used under the license found at http://github.com/robrez/xx-grid
+-->
+<!--
+`xx-grid` uses the styles from `xx-grid-css.html` to create a 20-grid responsive layout
+
+Example:
+
+    <xx-grid>
+      <xx-col s="100" m="50" l="50">s100 m50 l50</xx-col>
+      <xx-col s="100" m="50" l="50">s100 m50 l50</xx-col>
+    </xx-grid>
+
+It is also possible to use the classes as a standalone css import, without ever
+utilizing the `xx-grid` and `xx-col` components.
+
+CSS-Only Example:
+
+    <link rel="import" href="xx-grid-css.html">
+
+    <div class="xx-grid">
+      <div class="col s100 m50 l50">s100 m50 l50</div>
+      <div class="col s100 m50 l50">s100 m50 l50</div>
+    </div>
+
+@group xx-grid
+@element xx-grid
+@homepage github.io
+-->
+
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="xx-grid-css.html">
+
+<polymer-element name="xx-grid">
+
+  <template>
+    <style>
+       :host {
+         display: block;
+         position: relative;
+       }
+    </style>
+    <content id="content"></content>
+  </template>
+
+  <script>
+    Polymer('xx-grid', {
+        created: function() {
+            this.classList.add("xx-grid");
+        }
+    });
+  </script>
+</polymer-element>
+
