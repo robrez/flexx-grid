@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+    <meta name="mobile-web-app-capable" content="yes"></meta>
+    <script src="../../webcomponentsjs/webcomponents.min.js"></script>
+    <link rel="import" href="../../polymer/polymer.html"/>
+    <link href='//fonts.googleapis.com/css?family=RobotoDraft:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en' rel='stylesheet' type='text/css'>
+    <link rel="import" href="../xx-grid.html"/>
+    <link rel="import" href="../xx-col.html"/>
+
+    <style>
+      html {
+          font-family: 'RobotoDraft','Roboto','Helvetica Neue', Helvetica, Sans-Serif;
+          font-size: 100%; /*default 16px assumed*/
+          line-height: 1.5;
+      }
+      body {
+         border: 0;
+         margin: 0;
+         padding: 0;
+      }
+      #header {
+         width: 100%;
+         background-color: #00BCD4;
+         min-height: 56px;
+      }
+      .appTitle {
+         color: #FFF;
+         padding-left: 20px;
+         font-size: 40px;
+      }
+      .rGrid {
+         min-height: 48px;
+      }
+
+      .section {
+         padding: 20px;
+      }
+    
+    </style>
+
+  </head>
+ 
+  <body unresolved>
+
+    <div id="header" layout horizontal center>
+      <div class="rt-title appTitle">xx-grid</div>
+    </div>
+
+    <demo-layout layout vertical flex class="section"></demo-layout>
+
+  </body>
+</html>
+
+<polymer-element name="demo-layout">
+  <template>
+    <style>
+      :host {
+         background-color: #f9f9f9;
+      }
+      .sectionDetail {
+         margin-top: 10px;
+      }
+      .sectionInfo {
+         margin: 40px 0 20px 0;
+      }
+
+      .sectionTitle {
+         padding-left: 8px;
+         border-left: solid 2px #00BCD4;
+         color: #00BCD4;
+      }
+      .card {
+         background-color: #fff;
+         padding: 16px;
+      }
+      .shadow1 {
+          box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+      }
+      .display1 {
+         font-size: 34px;
+      }
+      #content {
+         padding: 0 4px 40px 4px;
+      }
+
+      @media (min-width: 480px) {
+        #content {
+           padding: 0 10px 40px 10px;
+        }
+      }
+
+      @media (min-width: 720px) {
+        #content {
+           padding: 0 40px 40px 40px;
+        }
+      }
+      .body {
+        font-size: 14px;
+        line-height: 1.5;
+      }
+      .demoCol {
+         min-height: 48px !important;
+         border-top: solid 1px white;
+         border-left: solid 1px white;
+         background-color: #E91E63;
+      }
+      .rt-dark {
+         color: rgba(255,255,255,.87);
+      }
+    </style>
+
+    <div id="content">
+      <xx-grid class="sectionInfo">
+        <div class="display1 t-nocolor sectionTitle col m40 s100">Responsive Grid</div>
+        <div class="sectionDetail col m60 s100">
+          <div class="body">
+            <div>Elements can be arranged in a responsive, 20-column grid.  There are currently 4 breakpoints available (xs, s, m, l). The default target is (s)mall.</div>
+          </div>
+        </div>
+      </xx-grid>
+      <xx-grid class="sectionDetail">
+        <template repeat="{{col, idx in cols}}">
+          <div class="col s5 demoCol"></div>
+        </template>
+      </xx-grid>
+      <div class="card shadow1">
+        <xx-grid>
+         <xx-col s="33">&nbsp;</xx-col>
+         <xx-col s="33">Min (px)</xx-col>
+         <xx-col s="33">Max (px)</xx-col>
+        </xx-grid>
+        <template repeat="{{range, idx in ranges}}">
+          <xx-grid>
+           <xx-col s="33">{{range.name}}</xx-col>
+           <xx-col s="33"">{{range.min}}</xx-col>
+           <template if="{{range.max}}">
+             <div class="col s33">{{range.max}}</div>
+           </template>
+          </xx-grid>
+        </template>
+      </div>
+
+      <xx-grid class="sectionInfo">
+        <div class="display1 t-nocolor sectionTitle col m40 s100">Easy Math</div>
+        <div class="sectionDetail col m60 s100">
+          <div class="body">
+            <div>Instead of dealing with twelfths and sixteenths, the 20-column grid system keeps things simple:  Everything is a multiple of 5. Everything is expressed as a percentage of 100.</div>
+          </div>
+        </div>
+      </xx-grid>
+      <xx-grid class="body xx-grid sectionDetail rt-dark">
+        <div class="col s25 demoCol" layout horizontal center center-justified>
+          s25
+        </div>
+        <div class="col s25 demoCol" layout horizontal center center-justified>
+          s25
+        </div>
+        <div class="col s25 demoCol" layout horizontal center center-justified>
+          s25
+        </div>
+        <div class="col s25 demoCol" layout horizontal center center-justified>
+          s25
+        </div>
+      </xx-grid>
+
+      <xx-grid class="body xx-grid sectionDetail rt-dark">
+        <div class="col s25 demoCol" layout horizontal center center-justified>
+          s25
+        </div>
+        <div class="col s50 demoCol" layout horizontal center center-justified>
+          s50
+        </div>
+        <div class="col s25 demoCol" layout horizontal center center-justified>
+          s25
+        </div>
+      </xx-grid>
+
+      <xx-grid class="body xx-grid sectionDetail rt-dark">
+        <div class="col s40 demoCol" layout horizontal center center-justified>
+          s40
+        </div>
+        <div class="col s10 demoCol" layout horizontal center center-justified>
+          s10
+        </div>
+        <div class="col s10 demoCol" layout horizontal center center-justified>
+          s10
+        </div>
+        <div class="col s40 demoCol" layout horizontal center center-justified>
+          s40
+        </div>
+      </xx-grid>
+
+      <div class="sectionInfo sectionDetail body">
+        <div>For convenience, 33.33% and 66.66% are also possible</div>
+      </div>
+      <xx-grid class="body sectionDetail rt-dark">
+        <div class="col s33 demoCol" layout horizontal center center-justified>
+          s33
+        </div>
+        <div class="col s33 demoCol" layout horizontal center center-justified>
+          s33
+        </div>
+        <div class="col s33 demoCol" layout horizontal center center-justified>
+          s33
+        </div>
+      </xx-grid>
+      <xx-grid class="body sectionDetail rt-dark">
+        <div class="col s66 demoCol" layout horizontal center center-justified>
+          s66
+        </div>
+        <div class="col s33 demoCol" layout horizontal center center-justified>
+          s33
+        </div>
+      </xx-grid>
+
+
+      <div class="sectionInfo sectionDetail body">
+        <div>Target multiple breakpoints to acheive responsive layouts</div>
+      </div>
+      <div class="body xx-grid sectionDetail rt-dark">
+        <div class="col xs100 s50 m30 l20 demoCol" layout horizontal center center-justified>
+           xs100 s50 m30 l20
+        </div>
+        <div class="col xs100 s50 m20 l20 demoCol" layout horizontal center center-justified>
+          xs100 s50 m20 l20
+        </div>
+        <div class="col xs100 s33 m20 l20 demoCol" layout horizontal center center-justified>
+          xs100 s33 m20 l20
+        </div>
+        <div class="col xs100 s33 m15 l20 demoCol" layout horizontal center center-justified>
+          xs100 s33 m15 l20 
+        </div>
+        <div class="col xs100 s33 m15 l20 demoCol" layout horizontal center center-justified>
+          xs100 s33 m15 l20
+        </div>
+      </div>
+
+    </div>
+
+  </template>
+  <script>
+    Polymer('demo-layout', {
+
+      created: function() {
+        this.cols = [];
+        for(var i = 1; i <= 20; i++) {
+            this.cols.push(i * 5);
+        }
+        this.ranges = [
+            { name: "xs", min: 0,    max: 480 },
+            { name: "s",  min: 481,  max: 720 },
+            { name: "m",  min: 721,  max: 1024 },
+            { name: "l",  min: 1024 },
+        ];
+      }
+
+    });
+  </script>
+</polymer-element>
+

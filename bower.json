@@ -1,16 +1,16 @@
 {
-  "name": "xx-grid",
+  "name": "flexx-grid",
   "version": "0.0.1",
   "authors": [
     "Rob Resendez <resendez.java@gmail.com>"
   ],
   "description": "20-column Responsive Grid for Polymer",
-  "main": "xx-grid.html",
+  "main": "flexx-grid.html",
   "keywords": [
     "web-components"
   ],
   "license": "BSD",
-  "homepage": "https://github.com/robrez/xx-grid",
+  "homepage": "https://github.com/robrez/flexx-grid",
   "ignore": [
     "**/.*",
     "node_modules",
