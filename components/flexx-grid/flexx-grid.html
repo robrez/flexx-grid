@@ -1,0 +1,56 @@
+<!--
+    @license
+    Copyright (c) 2015 Rob Resendez. All rights reserved.
+    This code may only be used under the license found at http://github.com/robrez/flexx-grid
+-->
+<!--
+`flexx-grid` uses the styles from `flexx-grid-css.html` to create a 20-grid responsive layout
+
+Example:
+
+    <flexx-grid>
+      <flexx-col s="100" m="50" l="50">s100 m50 l50</flexx-col>
+      <flexx-col s="100" m="50" l="50">s100 m50 l50</flexx-col>
+    </flexx-grid>
+
+It is also possible to use the classes as a standalone css import, without ever
+utilizing the `flexx-grid` and `flexx-col` components.
+
+CSS-Only Example:
+
+    <link rel="import" href="flexx-grid-css.html">
+
+    <div class="flexx-grid">
+      <div class="col s100 m50 l50">s100 m50 l50</div>
+      <div class="col s100 m50 l50">s100 m50 l50</div>
+    </div>
+
+@group flexx-grid
+@element flexx-grid
+@homepage github.io
+-->
+
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="flexx-grid-css.html">
+
+<polymer-element name="flexx-grid">
+
+  <template>
+    <style>
+       :host {
+         display: block;
+         position: relative;
+       }
+    </style>
+    <content id="content"></content>
+  </template>
+
+  <script>
+    Polymer('flexx-grid', {
+        created: function() {
+            this.classList.add("xx-grid");
+        }
+    });
+  </script>
+</polymer-element>
+

@@ -1,0 +1,33 @@
+{
+  "name": "flexx-grid",
+  "authors": [
+    "Rob Resendez <resendez.java@gmail.com>"
+  ],
+  "description": "20-column Responsive Grid for Polymer",
+  "main": "flexx-grid.html",
+  "keywords": [
+    "web-components"
+  ],
+  "license": "BSD",
+  "homepage": "https://github.com/robrez/flexx-grid",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^0.5"
+  },
+  "_release": "24b4b45226",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "24b4b4522620556355e10572805667c0b33df75e"
+  },
+  "_source": "git://github.com/robrez/flexx-grid.git",
+  "_target": "master",
+  "_originalSource": "robrez/flexx-grid",
+  "_direct": true
+}
